@@ -32,8 +32,10 @@ jobs:
     - name: Auth
       uses: google-github-actions/auth@v2
       with:
+        workload_identity_provider: 'projects/984592306304/locations/global/workloadIdentityPools/my-pool'
         project_id: ${{ secrets.GCP_PROJECT_ID }}
         credentials_json: ${{ secrets.GCP_SA_KEY }}
+        service_account: 'lively-goal-428803-t6@appspot.gserviceaccount.com'
 
     - name: Initialize App Engine (if not exists)
       run: |
@@ -43,9 +45,3 @@ jobs:
 
     - name: Deploy to Google App Engine
       uses: google-github-actions/deploy-appengine@v2
-      with:
-        deliverables: app.yaml
-        project_id: ${{ secrets.GCP_PROJECT_ID }}
-        credentials: ${{ secrets.GCP_SA_KEY }}
-        promote: true
-        version: 'auto'
