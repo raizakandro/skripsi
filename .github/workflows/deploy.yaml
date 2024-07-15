@@ -31,7 +31,7 @@ jobs:
 
     - name: Composer.json location
       run:
-        cd ../../google-api-php-client
+        cd google-api-php-client
 
     - name: Install dependencies
       run:
