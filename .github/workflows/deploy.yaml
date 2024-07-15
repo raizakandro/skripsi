@@ -30,7 +30,7 @@ jobs:
         export_default_credentials: true
 
     - name: Install dependencies
-      run: 
+      run: |
         cd google-api-php-client
         composer install --no-progress --no-suggest --prefer-dist
 
