@@ -31,7 +31,7 @@ jobs:
 
     - name: Install dependencies
       run: cd google-api-php-client
-      composer install 
+      run: composer install 
 
     - name: Deploy to Google App Engine
       uses: google-github-actions/deploy-appengine@v2
