@@ -10,6 +10,10 @@ on:
 
 jobs:
   build:
+    permissions:
+       contents: 'read'
+       id-token: 'write'
+  
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
 
