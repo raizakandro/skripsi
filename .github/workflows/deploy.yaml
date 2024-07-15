@@ -34,6 +34,12 @@ jobs:
         cd google-api-php-client
         composer install --no-progress --no-suggest --prefer-dist
 
+    - name: Auth
+    - uses: 'google-github-actions/auth@v2'
+      with:
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+
     - name: Deploy to Google App Engine
       uses: google-github-actions/deploy-appengine@v2
       with:
