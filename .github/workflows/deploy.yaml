@@ -31,9 +31,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-      cd ..
-      cd ..
-      cd google-api-php-client
+      cd ../../google-api-php-client
       composer install 
 
     - name: Deploy to Google App Engine
